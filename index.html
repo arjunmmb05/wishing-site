@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+  <title>For You ❤️</title>
+  <meta name="description" content="A secret emotional experience — a love confession wrapped in cinematic mystery.">
+  <meta name="theme-color" content="#FFF8F5">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Great+Vibes&family=JetBrains+Mono:wght@300;400&family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="custom-cursor"></div>
+  <div id="cursor-glow"></div>
+
+  <!-- Grain Overlay -->
+  <div class="grain-overlay"></div>
+
+  <!-- Ambient Background -->
+  <div class="ambient-bg"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Screen Pulse -->
+  <div id="screen-pulse" class="screen-pulse"></div>
+
+  <!-- Heartbeat Glow -->
+  <div id="heartbeat-glow" class="heartbeat-glow" style="display:none;"></div>
+
+  <!-- Music Toggle -->
+  <button id="music-toggle" class="music-toggle" aria-label="Toggle ambient music">🔇</button>
+
+  <!-- ===== LAYER 1: Terminal ===== -->
+  <div id="layer-terminal" class="layer">
+    <div class="terminal-container" id="terminal-output"></div>
+  </div>
+
+  <!-- ===== LAYER 2: Mystery Text + Enter Button ===== -->
+  <div id="layer-mystery" class="layer">
+    <div id="mystery-text" style="margin-bottom: clamp(24px, 5vw, 48px);"></div>
+    <button id="enter-btn" class="glass-btn" style="opacity:0; pointer-events:none;">
+      Enter My Heart
+    </button>
+  </div>
+
+  <!-- ===== LAYER 3: Poetry ===== -->
+  <div id="layer-poetry" class="layer">
+    <div id="poetry-text"></div>
+  </div>
+
+  <!-- ===== LAYER 4: Image Reveal ===== -->
+  <div id="layer-image" class="layer" style="gap: clamp(16px, 3vw, 32px);">
+    <div id="couple-frame" class="image-frame" style="opacity:0;">
+      <img src="couple.png" alt="Our Moment" loading="lazy">
+    </div>
+    <div id="image-caption" class="calligraphy" style="opacity:0; text-align:center;">
+      Happy Anniversary Ponnuuuuu😘❤️😘😘
+    </div>
+    <button id="love-btn" class="glass-btn" style="opacity:0; pointer-events:none;">
+      How much do I love you?
+    </button>
+  </div>
+
+  <!-- ===== LAYER 5: Love Answer ===== -->
+  <div id="layer-love-answer" class="layer">
+    <div id="love-answer-text"></div>
+  </div>
+
+  <!-- ===== LAYER 6: Envelope ===== -->
+  <div id="layer-envelope" class="layer">
+    <div id="envelope-wrapper" class="envelope-wrapper" style="opacity:0;">
+      <div id="envelope" class="envelope">
+        <div class="wax-seal">🔒</div>
+        <div class="envelope-text">One last thing remains unopened...</div>
+      </div>
+      <div id="letter-paper" class="letter-paper">
+        <div class="letter-title">My Dearest Love</div>
+        <p>From the moment you walked into my life, everything changed🌝. The colors became brighter💎, the music became
+          sweeter, and every day began to feel like a gift I never knew I deserved.</p>
+        <p>You are not just my partner — you are my safe place💎, my greatest adventure, and the most beautiful half of
+          my life🌝💎😘💕.</p>
+        <p>Thank you for loving me in ways I didn't know were possible. Thank you for seeing the best in me, even on my
+          worst days🥹🫂💎.</p>
+        <p>Every laugh we share, every silence we hold, every little moment — they are my most treasured possessions.
+        </p>
+        <p>I promise to love you deeper with every sunrise, to hold you closer with every sunset, and to choose you —
+          always and forever🫂😘💎💕🫴.</p>
+        <p
+          style="font-family: 'Great Vibes', cursive; font-size: clamp(1.2rem, 4vw, 1.8rem); text-align: right; color: #C2657A; margin-top: 20px;">
+          Forever yours ❤️
+        </p>
+        <div style="text-align:center; margin-top: 16px;">
+          <button id="continue-btn" class="glass-btn"
+            style="opacity:0; pointer-events:none; color: #C2657A; border-color: rgba(194,101,122,0.25);">
+            One last promise...
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LAYER 7: Final Scene ===== -->
+  <div id="layer-final" class="layer">
+    <div id="final-text" style="margin-bottom: clamp(20px, 4vw, 40px);"></div>
+    <div id="final-message" class="calligraphy" style="opacity:0; text-align:center; line-height:1.5;">
+      Happy Anniversary, My Ponnnumkatteeeee ❤️
+    </div>
+  </div>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+</body>
+
+</html>
