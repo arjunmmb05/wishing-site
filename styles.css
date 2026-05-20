@@ -280,11 +280,9 @@ body {
 .letter-paper {
   display: none;
   width: clamp(260px, 85vw, 520px);
-  max-height: 70dvh;
-  overflow-y: auto;
+  height: 70dvh;
   background: radial-gradient(circle at top left, #FFFCF9 0%, #FFF6EE 100%);
   border-radius: 12px;
-  padding: clamp(24px, 6vw, 44px);
   box-shadow: 0 25px 70px rgba(194,101,122,0.18), 0 10px 30px rgba(107,45,91,0.08);
   color: var(--text-body);
   font-family: 'Cormorant Garamond', serif;
@@ -294,6 +292,7 @@ body {
   line-height: 1.8;
   position: relative;
   border: 1px solid rgba(212, 168, 85, 0.4);
+  overflow: hidden;
 }
 .letter-paper::before {
   content: '';
@@ -302,6 +301,14 @@ body {
   border: 1px dashed rgba(194, 101, 122, 0.35);
   pointer-events: none;
   border-radius: 8px;
+  z-index: 10;
+}
+.letter-content {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  padding: clamp(24px, 6vw, 44px);
+  box-sizing: border-box;
 }
 .letter-paper .letter-title {
   font-family: 'Great Vibes', cursive;
@@ -381,9 +388,9 @@ body {
 }
 
 /* ===== SCROLLBAR ===== */
-.letter-paper::-webkit-scrollbar { width: 4px; }
-.letter-paper::-webkit-scrollbar-track { background: transparent; }
-.letter-paper::-webkit-scrollbar-thumb { background: rgba(194,101,122,0.25); border-radius: 2px; }
+.letter-content::-webkit-scrollbar { width: 4px; }
+.letter-content::-webkit-scrollbar-track { background: transparent; }
+.letter-content::-webkit-scrollbar-thumb { background: rgba(194,101,122,0.25); border-radius: 2px; }
 
 /* ===== RESPONSIVE HELPERS ===== */
 @media (max-width: 380px) {
