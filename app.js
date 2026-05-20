@@ -408,8 +408,8 @@ document.getElementById('love-btn').addEventListener('click', function () {
     const loveText = document.getElementById('love-answer-text');
 
     showPoeticSequence([
-      { text: 'More than words can explain.', hold: 2500 },
-      { text: 'More than everything..', hold: 2500 },
+      { text: 'Love you more than words can explain.', hold: 2500 },
+      { text: 'Love you more than everything..', hold: 2500 },
       { text: 'Loveee youuuuu sooo muchhhhhh😘😘❤️', hold: 3000 },
     ], loveText, () => {
       gsap.to(glowEl, { opacity: 0, duration: 1 });
@@ -446,7 +446,7 @@ document.getElementById('envelope').addEventListener('click', function () {
       // Animate letter paragraphs as real-time handwriting
       const paras = letterPaper.querySelectorAll('p');
       const originalTexts = Array.from(paras).map(p => p.innerHTML.trim());
-      
+
       // Clear contents and prepare for typing
       paras.forEach(p => {
         p.innerHTML = '';
@@ -479,9 +479,14 @@ document.getElementById('envelope').addEventListener('click', function () {
               p.innerHTML += chars[cIdx];
               cIdx++;
             }
-            
+
             // Auto scroll to bottom of the letter container so typing is always visible
-            letterPaper.scrollTop = letterPaper.scrollHeight;
+            const letterContent = document.getElementById('letter-content');
+            if (letterContent) {
+              letterContent.scrollTop = letterContent.scrollHeight;
+            } else {
+              letterPaper.scrollTop = letterPaper.scrollHeight;
+            }
 
             // Introduce realistic dynamic delays (comma/period pause)
             let delay = 15 + Math.random() * 20;
